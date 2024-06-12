@@ -57,11 +57,10 @@ export default function Search(){
                 </div>
             </form>
 
-            <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1">
+            <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1" key={cof.id}>
                 {
                     filteredProducts.map((cof) => (
-                        <ImgCard2 
-                            key={cof.id} 
+                        <ImgCard2
                             values={{ 
                                 id: cof.id, 
                                 brand: cof.brand, 
