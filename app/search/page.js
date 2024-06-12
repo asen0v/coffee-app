@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState, use } from "react";
+import { useEffect, useState } from "react";
 import Header from "../Component/Header";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebaseConfig";
@@ -19,31 +19,30 @@ export default function Search(){
 
         const data = [];
         docsSnap.forEach((doc) => {
-            data.push({id:doc.id,...doc.data()});
-        })
+            data.push({id: doc.id, ...doc.data()});
+        });
 
         setAllProducts(data);
         setFilteredProducts(data);
     }
 
-    useEffect (()=> {
+    useEffect(() => {
         getProductsData();
-    }, []); //dependancy 
+    }, []); // dependency
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const filtered = allProducts.filter((product) => 
             product.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            product.name.toLowerCase().includes(searchQuery.toLocaleLowerCase()) || 
-            product.type.toLowerCase().includes(searchQuery.toLocaleLowerCase())  
+            product.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+            product.type.toLowerCase().includes(searchQuery.toLowerCase())
         );
         setFilteredProducts(filtered);
     };
 
     return(
         <>
-        
-        <hr />
+            <hr />
             <h1 className="display-4 fw-normal">Search Product</h1>
             <form onSubmit={handleSubmit}>
                 <div className="row">
@@ -61,10 +60,21 @@ export default function Search(){
             <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1">
                 {
                     filteredProducts.map((cof) => (
-                    
-                        <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1">
-                        <ImgCard2 values={{id:cof.id, brand:cof.brand, name:cof.name, description:cof.description, pType:cof.pType, weight:cof.weight, type:cof.type, price: parseFloat(cof.price).toFixed(2), roast:cof.roast, logo:cof.logo}} />
-                     </div>
+                        <ImgCard2 
+                            key={cof.id} 
+                            values={{ 
+                                id: cof.id, 
+                                brand: cof.brand, 
+                                name: cof.name, 
+                                description: cof.description, 
+                                pType: cof.pType, 
+                                weight: cof.weight, 
+                                type: cof.type, 
+                                price: parseFloat(cof.price).toFixed(2), 
+                                roast: cof.roast, 
+                                logo: cof.logo 
+                            }} 
+                        />
                     ))
                 }
             </div>
