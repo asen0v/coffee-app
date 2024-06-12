@@ -86,7 +86,7 @@ export default function Test(){
       <div className="row row-cols-1 row-cols-lg-6 row-cols-md-3 row-cols-sm-1 mb-3 text-center">
       {
         coffeeData.map(cof => (
-          <ImgCard values={{id:cof.id, brand:cof.brand, name:cof.name, description:cof.description, ptype:cof.ptype, weight:cof.weight, type:cof.type, price:cof.price, roast:cof.roast, logo:cof.logo}} />
+          <ImgCard values={{brand:cof.brand, name:cof.name, description:cof.description, ptype:cof.ptype, weight:cof.weight, type:cof.type, price:cof.price, roast:cof.roast, logo:cof.logo}} />
         ))
       }
       </div>

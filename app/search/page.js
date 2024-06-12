@@ -62,7 +62,7 @@ export default function Search(){
                 {
                     filteredProducts.map((cof) => (
                     
-                        <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1" id={cof.id}>
+                        <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1">
                         <ImgCard2 values={{id:cof.id, brand:cof.brand, name:cof.name, description:cof.description, pType:cof.pType, weight:cof.weight, type:cof.type, price: parseFloat(cof.price).toFixed(2), roast:cof.roast, logo:cof.logo}} />
                      </div>
                     ))

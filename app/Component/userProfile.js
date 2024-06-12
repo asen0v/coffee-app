@@ -215,7 +215,7 @@ export default function EditUserProfile({ params }) {
                         </div>
                         <div className="col-lg-8">
                             <div className="widget welcome-message">
-                                <h2><i className="fa fa-user"></i> {username}'s profile</h2>
+                                <h2><i className="fa fa-user"></i> {username}&apos;s profile</h2>
                                 <p>Hey, <b>{name}</b>! From here you can edit your profile and check your orders!</p>
                             </div>
                             <div className="widget personal-info">
