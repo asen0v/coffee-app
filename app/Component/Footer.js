@@ -76,7 +76,7 @@ export default function Footer(){
     <div className="row">
       <div className="col-lg-6 text-center text-lg-left mb-3 mb-lg-0">
         <div className="copyright">
-          <p>Copyright &copy; 2024 | Developed by <b>Veselin Asenov</b> for <i>Solent University </i></p>
+          <p>Copyright &copy; 2024 | Developed by <b>Veselin Asenov</b> for <i>Solent University </i><br /> Theme by <i>ThemeFisher</i></p>
         </div>
       </div>
       <div className="col-lg-6">
